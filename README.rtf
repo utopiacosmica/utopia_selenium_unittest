@@ -1,0 +1,374 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf810
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red153\green102\blue51;\red255\green255\blue255;\red205\green190\blue151;
+\red130\green52\blue38;\red53\green53\blue53;\red53\green53\blue53;\red17\green141\blue255;\red31\green208\blue255;
+}
+{\*\expandedcolortbl;;\csgenericrgb\c60000\c40000\c20000;\csgenericrgb\c100000\c100000\c100000;\cssrgb\c84314\c78824\c65490;
+\cssrgb\c58858\c27239\c19502;\cssrgb\c27059\c27059\c27059;\csgenericrgb\c20856\c20855\c20856;\csgenericrgb\c6695\c55446\c99850;\csgenericrgb\c12304\c81493\c99879;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww16200\viewh13200\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs32 \cf2 \cb3 \CocoaLigature0 Need for work:\
+\cf4 \cb5 Python 2.7                                                                               \
+selenium (3.3.1)\
+unittest2 (1.1.0)\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\fs29\fsmilli14667 \cf6 \cb1 \CocoaLigature1 \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf6 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf6 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\b\fs30\fsmilli15333 \cf7 dropdown\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\b0\fs28 \cf8 from selenium.webdriver.support.ui import Select\cf6 \
+\
+\cf8 select = Select(driver.find_element_by_name('location_id'))\
+select.select_by_value('640650')\cf6 \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf6 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\b\fs30\fsmilli15333 \cf7 parsing by elements\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\b0\fs28 \cf8 posts = driver.find_elements_by_class_name('js-catalog-item-enum')\
+for post in posts:\
+	print post.text\cf6 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\b\fs30\fsmilli15333 \cf7 parsing in write to file
+\b0\fs28 \cf6 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf8 posts = driver.find_elements_by_class_name('js-catalog-item-enum')\
+for post in posts:\
+	file = open ('/Users/utopia/Desktop/avito.txt', 'a')\
+	file.write(post.text.encode('utf8'))\
+	file.close()\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\b\fs30\fsmilli15333 \cf7 scroll down\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\b0\fs28 \cf8 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\b\fs30\fsmilli15333 \cf7 maximize window
+\b0\fs28 \cf8 \
+driver.maximize_window()\
+\
+
+\b\fs30\fsmilli15333 \cf7 wait
+\b0\fs28 \cf8 \
+driver.implicitly_wait(5)\
+\
+
+\b\fs30\fsmilli15333 \cf7 To move backwards and forwards in your browser\'92s history:\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\b0\fs28 \cf8 driver.forward()\
+driver.back()\cf6 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\b\fs30\fsmilli15333 \cf7 Take screenshot
+\b0\fs28 \cf6 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf8 driver.get_screenshot_as_file('Yandex.png')\
+\cf6 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\b\fs30\fsmilli15333 \cf6 Locating Elements
+\b0\fs28 \
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls1\ilvl0
+\f0 \cf6 {\listtext	\'95	}
+\f1 \cf8 find_element_by_id\
+\ls1\ilvl0
+\f0 \cf6 {\listtext	\'95	}
+\f1 \cf8 find_element_by_name\
+\ls1\ilvl0
+\f0 \cf6 {\listtext	\'95	}
+\f1 \cf8 find_element_by_xpath\
+\ls1\ilvl0
+\f0 \cf6 {\listtext	\'95	}
+\f1 \cf8 find_element_by_link_text\
+\ls1\ilvl0
+\f0 \cf6 {\listtext	\'95	}
+\f1 \cf8 find_element_by_partial_link_text\
+\ls1\ilvl0
+\f0 \cf6 {\listtext	\'95	}
+\f1 \cf8 find_element_by_tag_name\
+\ls1\ilvl0
+\f0 \cf6 {\listtext	\'95	}
+\f1 \cf8 find_element_by_class_name\
+\ls1\ilvl0
+\f0 \cf6 {\listtext	\'95	}
+\f1 \cf8 find_element_by_css_selector
+\fs30\fsmilli15333 \cf6 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\fs28 \cf6 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\b\fs30\fsmilli15333 \cf6 To find multiple elements (these methods will return a list):
+\b0 \
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls2\ilvl0
+\f0\fs28 \cf6 {\listtext	\'95	}
+\f1 \cf8 find_elements_by_name\
+\ls2\ilvl0
+\f0 \cf6 {\listtext	\'95	}
+\f1 \cf8 find_elements_by_xpath\
+\ls2\ilvl0
+\f0 \cf6 {\listtext	\'95	}
+\f1 \cf8 find_elements_by_link_text\
+\ls2\ilvl0
+\f0 \cf6 {\listtext	\'95	}
+\f1 \cf8 find_elements_by_partial_link_text\
+\ls2\ilvl0
+\f0 \cf6 {\listtext	\'95	}
+\f1 \cf8 find_elements_by_tag_name\
+\ls2\ilvl0
+\f0 \cf6 {\listtext	\'95	}
+\f1 \cf8 find_elements_by_class_name\
+\ls2\ilvl0
+\f0 \cf6 {\listtext	\'95	}
+\f1 \cf8 find_elements_by_css_selector
+\fs30\fsmilli15333 \cf6 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\fs28 \cf6 \
+\
+\
+test1.py\
+\
+\cf8 from selenium import webdriver\
+from selenium.webdriver.common.keys import Keys\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf8 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf8 driver = webdriver.Chrome('/Users/utopia/Desktop/sel/chromedriver')\
+driver.get("http://www.python.org")\
+assert "Python" in driver.title\
+elem = driver.find_element_by_name("q")\
+elem.clear()\
+elem.send_keys("pycon")\
+elem.send_keys(Keys.RETURN)\
+assert "No results found." not in driver.page_source\
+driver.close()\
+\cf6 \
+test2.py\
+\
+\cf8 import unittest\
+from selenium import webdriver\
+from selenium.webdriver.common.keys import Keys\
+\
+\
+class PythonOrgSearch(unittest.TestCase):\
+	def setUp(self):\
+		self.driver = webdriver.Chrome('/Users/utopia/Dropbox/sel/chromedriver')\
+\
+	def test_search_in_python_org(self):\
+		driver = self.driver\
+		driver.get("http://www.python.org")\
+		self.assertIn("Python", driver.title)\
+		elem = driver.find_element_by_name("q")\
+		elem.send_keys("pycon")\
+		elem.send_keys(Keys.RETURN)\
+		assert "No results found." not in driver.page_source\
+\
+	def tearDown(self):\
+		self.driver.close()\
+\
+\
+if __name__ == "__main__":\
+	unittest.main()\cf6 \
+\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf6 \
+\
+\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\fs34\fsmilli17333 \cf6 3.3. Drag and drop\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\fs30\fsmilli15333 \cf6 You can use drag and drop, either moving an element by a certain amount, or on to another element:\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\fs28 \cf8 element = driver.find_element_by_name("source")\
+target = driver.find_element_by_name("target")\
+\
+from selenium.webdriver import ActionChains\
+action_chains = ActionChains(driver)\
+action_chains.drag_and_drop(element, target).perform()\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf6 \
+\
+\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\b\fs34\fsmilli17333 \cf7 Then, you can access the classes like this:
+\b0\fs30\fsmilli15333 \cf6 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\fs28 \cf8 webdriver.Firefox\
+webdriver.FirefoxProfile\
+webdriver.Chrome\
+webdriver.ChromeOptions\
+webdriver.Ie\
+webdriver.Opera\
+webdriver.PhantomJS\
+webdriver.Remote\
+webdriver.DesiredCapabilities\
+webdriver.ActionChains\
+webdriver.TouchActions\
+webdriver.Proxy\cf6 \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf6 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\b\fs30\fsmilli15333 \cf7 Install
+\b0\fs28 \cf9 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf8 virtualenv --no-site-packages selenv\
+source bin/activate\
+pip install selenium\
+pip install unittest2
+\fs29\fsmilli14667 \cf9 \
+\
+http://selenium-python.readthedocs.io/navigating.html
+\fs28 \cf6 \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf6 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\b\fs30\fsmilli15333 \cf7 run_all.sh\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\b0\fs29\fsmilli14667 \cf6 \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\fs28 \cf8 #!/bin/sh\
+\
+python -m unittest discover --pattern=test*.py\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\fs29\fsmilli14667 \cf6 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\b\fs30\fsmilli15333 \cf7 main_test.py
+\b0\fs29\fsmilli14667 \cf6 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\fs28 \cf8 import unittest\
+from selenium import webdriver\
+import os\
+\
+\
+\
+class MainTest(unittest.TestCase):\
+\
+	def setUp(self):\
+		driver_path = os.path.realpath('chromedriver')\
+		self.driver = webdriver.Chrome(driver_path)\
+		self.driver.maximize_window()\
+\
+	def tearDown(self):\
+		self.driver.close()
+\fs29\fsmilli14667 \cf6 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\b\fs30\fsmilli15333 \cf7 test_python_org
+\b0\fs29\fsmilli14667 \cf6 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\fs28 \cf8 import unittest\
+import main_test\
+from selenium.webdriver.common.keys import Keys\
+\
+\
+class PythonOrgSiteSearch(main_test.MainTest):\
+\
+    def test_(self):\
+        driver = self.driver\
+        driver.get("http://www.python.org")\
+        self.assertIn("Python", driver.title)\
+        elem = driver.find_element_by_name("q")\
+        elem.send_keys("pycon")\
+        elem.send_keys(Keys.RETURN)\
+        assert "No results found." not in driver.page_source\
+\
+\
+\
+if __name__ == "__main__":\
+    unittest.main()\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\fs29\fsmilli14667 \cf6 \
+\
+\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\fs21\fsmilli10667 \cf6 \
+\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf6 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
