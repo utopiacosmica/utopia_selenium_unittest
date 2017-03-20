@@ -1,32 +1,40 @@
 ## Need for work:
-Python 2.7
-selenium (3.3.1)
-unittest2 (1.1.0)
+
+- Python 2.7
+- selenium (3.3.1)
+- unittest2 (1.1.0)
 
 
 
 
 ## dropdown
+```
 from selenium.webdriver.support.ui import Select
 
 select = Select(driver.find_element_by_name('location_id'))
 select.select_by_value('640650')
-
+```
 
 ## parsing by elements
+```
 posts = driver.find_elements_by_class_name('js-catalog-item-enum')
 for post in posts:
 	print post.text
+```
 
 ## parsing in write to file
+```
 posts = driver.find_elements_by_class_name('js-catalog-item-enum')
 for post in posts:
 	file = open ('/Users/utopia/Desktop/avito.txt', 'a')
 	file.write(post.text.encode('utf8'))
 	file.close()
+```
 
 ## scroll down
+```
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+```
 
 ## maximize window
 driver.maximize_window()
