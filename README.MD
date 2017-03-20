@@ -1,4 +1,4 @@
-#Need for work:
+## Need for work:
 Python 2.7
 selenium (3.3.1)
 unittest2 (1.1.0)
@@ -6,43 +6,43 @@ unittest2 (1.1.0)
 
 
 
-#dropdown
+## dropdown
 from selenium.webdriver.support.ui import Select
 
 select = Select(driver.find_element_by_name('location_id'))
 select.select_by_value('640650')
 
 
-#parsing by elements
+## parsing by elements
 posts = driver.find_elements_by_class_name('js-catalog-item-enum')
 for post in posts:
 	print post.text
 
-#parsing in write to file
+## parsing in write to file
 posts = driver.find_elements_by_class_name('js-catalog-item-enum')
 for post in posts:
 	file = open ('/Users/utopia/Desktop/avito.txt', 'a')
 	file.write(post.text.encode('utf8'))
 	file.close()
 
-#scroll down
+## scroll down
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-#maximize window
+## maximize window
 driver.maximize_window()
 
-#wait
+## wait
 driver.implicitly_wait(5)
 
-#To move backwards and forwards in your browser’s history:
+## To move backwards and forwards in your browser’s history:
 driver.forward()
 driver.back()
 
-#Take screenshot
+## Take screenshot
 driver.get_screenshot_as_file('Yandex.png')
 
 
-#Locating Elements
+## Locating Elements
 	•	find_element_by_id
 	•	find_element_by_name
 	•	find_element_by_xpath
@@ -52,7 +52,7 @@ driver.get_screenshot_as_file('Yandex.png')
 	•	find_element_by_class_name
 	•	find_element_by_css_selector
 
-#To find multiple elements (these methods will return a list):
+## To find multiple elements (these methods will return a list):
 	•	find_elements_by_name
 	•	find_elements_by_xpath
 	•	find_elements_by_link_text
@@ -63,7 +63,7 @@ driver.get_screenshot_as_file('Yandex.png')
 
 
 
-#test1
+## test1
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -78,7 +78,7 @@ elem.send_keys(Keys.RETURN)
 assert "No results found." not in driver.page_source
 driver.close()
 
-#test2
+## test2
 
 import unittest
 from selenium import webdriver
@@ -108,7 +108,7 @@ if __name__ == "__main__":
 
 
 
-#3.3. Drag and drop
+## 3.3. Drag and drop
 You can use drag and drop, either moving an element by a certain amount, or on to another element:
 element = driver.find_element_by_name("source")
 target = driver.find_element_by_name("target")
@@ -120,7 +120,7 @@ action_chains.drag_and_drop(element, target).perform()
 
 
 
-#Then, you can access the classes like this:
+## Then, you can access the classes like this:
 webdriver.Firefox
 webdriver.FirefoxProfile
 webdriver.Chrome
@@ -145,7 +145,7 @@ webdriver.Proxy
 
 
 
-#Install
+## Install
 
 virtualenv --no-site-packages selenv
 source bin/activate
@@ -154,13 +154,13 @@ pip install unittest2
 
 http://selenium-python.readthedocs.io/navigating.html
 
-#run_all.sh
+## run_all.sh
 
 #!/bin/sh
 
 python -m unittest discover --pattern=test*.py
 
-#main_test.py
+## main_test.py
 
 import unittest
 from selenium import webdriver
@@ -178,7 +178,7 @@ class MainTest(unittest.TestCase):
 	def tearDown(self):
 		self.driver.close()
 
-#test_python_org
+## test_python_org
 
 import unittest
 import main_test
