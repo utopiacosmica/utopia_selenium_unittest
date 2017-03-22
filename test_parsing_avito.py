@@ -45,7 +45,7 @@ class Avito(main_test.MainTest):
 
 		posts = driver.find_elements_by_class_name('js-catalog-item-enum')
 		for post in posts:
-			file = open ('/Users/utopia/Desktop/avito.txt', 'a')
+			file = open ('avito.txt', 'a')
 			file.write('\n' + 'Page 2' + '\n' + post.text.encode('utf8'))
 			file.close()
 
