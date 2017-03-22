@@ -51,7 +51,7 @@ class Avito(main_test.MainTest):
 		element = driver.find_element_by_class_name('pagination-page')
 		element.click()
 
-
+		driver.implicitly_wait(5)
 
 		posts = driver.find_elements_by_class_name('js-catalog-item-enum')
 		for post in posts:
