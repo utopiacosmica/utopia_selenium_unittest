@@ -19,22 +19,14 @@ class Avito(main_test.MainTest):
 		select = Select(driver.find_element_by_name('location_id'))
 		select.select_by_value('640650')
 
-		driver.implicitly_wait(5)
-
 		select = Select(driver.find_element_by_name('category_id'))
 		select.select_by_value('98')
-
-		driver.implicitly_wait(5)
 
 		element = driver.find_element_by_id('images_exists')
 		element.click()
 
-		driver.implicitly_wait(5)
-
 		element = driver.find_element_by_class_name('search-form__submit')
 		element.click()
-
-		driver.implicitly_wait(5)
 
 		posts = driver.find_elements_by_class_name('js-catalog-item-enum')
 		for post in posts:
@@ -46,12 +38,10 @@ class Avito(main_test.MainTest):
 
 		driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-		driver.implicitly_wait(5)
-
 		element = driver.find_element_by_class_name('pagination-page')
 		element.click()
 
-		driver.implicitly_wait(5)
+		sleep(2)
 
 		posts = driver.find_elements_by_class_name('js-catalog-item-enum')
 		for post in posts:
