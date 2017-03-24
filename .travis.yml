@@ -1,8 +1,8 @@
 language: python
 python:
-  -2.7
+  - "2.7"
+cache: pip
 install:
-  - pip install -q selenium
-  - pip install -q unittest
-  - python setup.py -q install
-script: sh run_all.sh
+  - pip install -r requirements.txt
+script:
+  - python test_python_org.py
