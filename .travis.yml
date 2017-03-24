@@ -2,6 +2,7 @@ language: python
 python:
   -2.7
 install:
-  -pip install selenium
-  -pip install unittest2
+  - pip install -q selenium
+  - pip install -q unittest
+  - python setup.py -q install
 script: sh run_all.sh
