@@ -1,4 +1,4 @@
-### A quick start guide to Selenium:
+# A quick start guide to Selenium:
 
 ## Need for work:
 
