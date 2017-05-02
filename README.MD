@@ -83,6 +83,36 @@ driver.get_screenshot_as_file('Yandex.png')
 ```
 
 
+## 3.3. Drag and drop
+You can use drag and drop, either moving an element by a certain amount, or on to another element:
+```
+element = driver.find_element_by_name("source")
+target = driver.find_element_by_name("target")
+
+from selenium.webdriver import ActionChains
+action_chains = ActionChains(driver)
+action_chains.drag_and_drop(element, target).perform()
+```
+
+
+
+## Then, you can access the classes like this:
+```
+webdriver.Firefox
+webdriver.FirefoxProfile
+webdriver.Chrome
+webdriver.ChromeOptions
+webdriver.Ie
+webdriver.Opera
+webdriver.PhantomJS
+webdriver.Remote
+webdriver.DesiredCapabilities
+webdriver.ActionChains
+webdriver.TouchActions
+webdriver.Proxy
+```
+
+
 ## test1
 ```
 from selenium import webdriver
@@ -125,46 +155,6 @@ class PythonOrgSearch(unittest.TestCase):
 if __name__ == "__main__":
 	unittest.main()
 ```
-
-
-
-## 3.3. Drag and drop
-You can use drag and drop, either moving an element by a certain amount, or on to another element:
-```
-element = driver.find_element_by_name("source")
-target = driver.find_element_by_name("target")
-
-from selenium.webdriver import ActionChains
-action_chains = ActionChains(driver)
-action_chains.drag_and_drop(element, target).perform()
-```
-
-
-
-## Then, you can access the classes like this:
-```
-webdriver.Firefox
-webdriver.FirefoxProfile
-webdriver.Chrome
-webdriver.ChromeOptions
-webdriver.Ie
-webdriver.Opera
-webdriver.PhantomJS
-webdriver.Remote
-webdriver.DesiredCapabilities
-webdriver.ActionChains
-webdriver.TouchActions
-webdriver.Proxy
-```
-
-
-
-
-
-
-
-
-
 
 
 ## Install
