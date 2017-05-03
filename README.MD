@@ -24,12 +24,6 @@ for post in posts:
 	print post.text
 ```
 
-## open menu item
-```
-select = Select(driver.find_element_by_name('location_id'))
-select.select_by_value('640650')
-```
-
 ## parsing in write to file
 ```
 posts = driver.find_elements_by_class_name('js-catalog-item-enum')
