@@ -9,12 +9,24 @@
 
 
 
-## dropdown
+## dropdown (menu)
 ```
 from selenium.webdriver.support.ui import Select
 
 select = Select(driver.find_element_by_name('location_id'))
 select.select_by_value('640650')
+```
+
+## action chains (hide menu)
+```
+from selenium.webdriver.common.action_chains import ActionChains
+
+menu = driver.find_element_by_link_text('MTB')
+hidden_submenu = driver.find_element_by_link_text('Components')
+actions = ActionChains(driver)
+actions.move_to_element(menu)
+actions.click(hidden_submenu)
+actions.perform()
 ```
 
 ## parsing by elements
