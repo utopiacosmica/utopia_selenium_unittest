@@ -50,6 +50,11 @@ for post in posts:
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 ```
 
+## scroll x,y
+```
+driver.execute_script("window.scrollTo(0, 500);")
+```
+
 ## maximize window
 ```
 driver.maximize_window()
