@@ -7,7 +7,7 @@ from selenium import webdriver
 class MainTest(unittest.TestCase):
 
 	def setUp(self):
-		self.driver = webdriver.Chrome('driver_windows/chromedriver')
+		self.driver = webdriver.Chrome('driver_mac/chromedriver')
 		self.driver.maximize_window()
 
 	def tearDown(self):
