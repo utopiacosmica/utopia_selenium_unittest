@@ -88,6 +88,21 @@ driver.get_screenshot_as_file('Yandex.png')
 	•	find_element_by_css_selector
 ```
 
+## Download file
+```
+chromeOptions = webdriver.ChromeOptions()
+prefs = {
+"download.default_directory" : "/Users/utopia/Downloads",
+"download.prompt_for_download": False,
+"download.directory_upgrade": True,
+"safebrowsing.enabled": True
+}
+chromeOptions.add_experimental_option("prefs",prefs)
+chromedriver = "driver_mac/chromedriver"
+driver = webdriver.Chrome(executable_path=chromedriver, chrome_options=chromeOptions)
+driver.maximize_window()
+```
+
 ## To find multiple elements (these methods will return a list):
 ```
 	•	find_elements_by_name
